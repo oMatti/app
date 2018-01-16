@@ -2,10 +2,15 @@
     include 'includes/db.php';
 session_start();
 
-    $username = $_POST['username'];
-    $password = $_POST['password'];
+
 
       if(isset($_POST['login'])){
+
+        $username = $_POST['username'];
+        $password = $_POST['password'];
+
+        $username = mysqli_real_escape_string($connection, $username);
+        $password = mysqli_real_escape_string($connection, $password);
 
 
         $query = "SELECT * FROM Users WHERE username = '{$username}' ";
@@ -27,8 +32,7 @@ session_start();
         else {
           header("Location: login.php");
         }
-        $username = mysqli_real_escape_string($connection, $username);
-        $password = mysqli_real_escape_string($connection, $password);
+
       }
  ?>
 
