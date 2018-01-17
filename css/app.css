@@ -15,7 +15,6 @@ body{
   margin: 0 auto;
   justify-content: center;
   align-items: center;
-
 }
 .login{
   background: #fff;
@@ -40,7 +39,16 @@ body{
   color: #fff;
 
 }
+
 .login input[type=submit]:hover{
   background:  #1abc9c;
 
+}
+.link{
+  font-size: 14px;
+  display: block;
+  margin: 5px auto 0;
+  text-align: center;
+  text-decoration: none;
+  color: #fff;
 }
