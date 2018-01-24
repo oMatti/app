@@ -1,5 +1,7 @@
 <?php
-    include 'includes/db.php';
+  $title = 'Register';
+  $bodyID = "register";
+  include "includes/header.php";
 session_start();
 
 
@@ -9,36 +11,36 @@ session_start();
         $username = $_POST['username'];
         $password = $_POST['password'];
 
-
-        //escape quotes
-        $username = mysqli_real_escape_string($connection, $username);
-        $password = mysqli_real_escape_string($connection, $password);
-
-        //password emcryption
-        $hashFormat = "$2y$10$";
-        $salt = "YuhakjhAS23890ASkjd2ijDKjas";
-        $hashAndSalt = $hashFormat . $salt;
-        $password = crypt($password, $hashAndSalt);
-
-
-  $query = "INSERT INTO users(username, password)";
-  $query .= "VALUES ('$username', '$password')";
-
-
-  $result = mysqli_query($connection, $query);
-
-if (!$result) {
-  die("Query failed") . mysqli_error($connection);
+if (usernameExists($username)) {
+  echo "Username already exists";
 }
-else{
+else {
 
+          //escape quotes
+          $username = mysqli_real_escape_string($connection, $username);
+          $password = mysqli_real_escape_string($connection, $password);
+
+          //password encryption
+          $hashFormat = "$2y$10$";
+          $salt = "YuhakjhAS23890ASkjd2ijDKjas";
+          $hashAndSalt = $hashFormat . $salt;
+          $password = crypt($password, $hashAndSalt);
+
+  //SQL query
+    $query = "INSERT INTO users(username, password)";
+    $query .= "VALUES ('$username', '$password')";
+
+  //confirmation
+    $result = mysqli_query($connection, $query);
+
+  if (!$result) {
+    die("Query failed") . mysqli_error($connection);
+  }
 }
+
+header("Location: login.php");
       }
- ?>
 
-  <?php
-  $title = "Register";
-   include "includes/header.php";
    ?>
     <form class="login animated bounceInLeft" action="register.php" method="post">
       <h3>Register now</h3>

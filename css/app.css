@@ -11,8 +11,10 @@ html, body{
   height: 100%;
 }
 body{
-  display: flex;
   margin: 0 auto;
+}
+#login, #register{
+  display: flex;
   justify-content: center;
   align-items: center;
 }
@@ -50,5 +52,44 @@ body{
   margin: 5px auto 0;
   text-align: center;
   text-decoration: none;
-  color: #fff;
+  color: #3498db;
 }
+#alert {
+   background: #e74c3c;
+   border-radius: 4px;
+  color: #fff;
+   line-height: 50px;
+   margin: 15px auto 0;
+   text-align: center;
+   width: 320px;
+ }
+ nav {
+   background: #242424;
+   color: #fff;
+   height: 80px;
+  line-height: 80px;
+   padding: 0 20px;
+   position: relative;
+   text-align: center;
+ }
+ nav a {
+   color: #ddd;
+   float: right;
+}
+ /*Logo*/
+ nav h1 {
+   margin: 0 auto;
+  position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+ }
+ section {
+   background: #fff;
+   margin: 100px auto 0;
+   padding: 20px;
+   width: 320px;
+ }
+ section h2 {
+  margin: 0 auto;
+   text-align: center;

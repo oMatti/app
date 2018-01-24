@@ -1,8 +1,12 @@
 <?php
-    include 'includes/db.php';
+    $title = 'Login';
+    $bodyID = 'login';
+    include "includes/header.php";
 session_start();
 
-
+$db_username ='';
+$db_password = '';
+$errorMessage = '';
 
       if(isset($_POST['login'])){
 
@@ -28,26 +32,36 @@ session_start();
         $password = crypt($password, $db_password);
 
         if ($username === $db_username && $password === $db_password) {
+          $_SESSION['id'] = $db_id;
           $_SESSION['username'] = $db_username;
           header("Location: new.php");
         }
         else {
-          header("Location: login.php");
+
+          $errorMessage = "Wrong username or password!";
         }
 
       }
  ?>
 
-  <?php
-  $title = "Login";
-   include "includes/header.php";
-   ?>
-    <form class="login animated bounceInLeft" action="login.php" method="post">
+
+
+    <form
+      class="login animated bounceInLeft" action="login.php" method="post">
       <h3>Login now</h3>
       <input type="text" name="username" placeholder="Username" required autofocus>
       <input type="password" name="password" placeholder="Password" required>
       <input type="submit" name="login" value="Login">
       <a class="link" href="register.php">New user? Register here!</a>
     </form>
+
+    <?php if ($errorMessage) {
+      echo "class='login animated shake'";  } ?>
+
+<?php if ($errorMessage) : ?>
+    <div id="alert" class="animated shake">
+      <?php echo $errorMessage; ?>
+    </div>
+  <?php endif; ?>
   </body>
 </html>
