@@ -4,6 +4,32 @@ html, body{
 }
 /*layout end*/
 
+/*splash screen*/
+#splashScreen{
+  align-items: center;
+  background: #757F9A;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #D7DDE8, #757F9A);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #D7DDE8, #757F9A); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  display: flex;
+  justify-content: center;
+  z-index: 2;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+}
+#splashScreen:before {
+  animation: splashScreenAnimation 2.5s both;
+  background: url(../img/todo.svg) no-repeat center;
+  content: '';
+  display: block;
+  height: 33.333333333333%;
+  width: 33.333333333333%;
+}
+/*splash screen end*/
+
 /*landing page*/
 
 video{
@@ -18,7 +44,27 @@ video{
   z-index: -1;
 }
 main{
-
-
+height: 540px;
+width: 540px;
+}
+main p{
+  color: #fff;
 }
 /*landing page end */
+
+/*animations*/
+@keyframes splashScreenAnimation{
+  from {
+    opacity: 0;
+    transform: translate3d(0, -100%, 0);
+  }
+  75% {
+    opacity: 1;
+    transform: none;
+  }
+  to {
+    opacity: 0;
+    transform: translate3d(0, 100%, 0);
+  }
+}
+/*animations end*/
