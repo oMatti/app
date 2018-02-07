@@ -1,8 +1,9 @@
 <?php
 include 'db.php';
 include 'functions.php';
-
-$title = "Welcome";
+if (!isset($title)){
+  ifSChange();
+}
 ?>
 <!doctype html>
 <html lang="en">

@@ -1,15 +1,43 @@
+/*golgeler fontes*/
+@import url('https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700');
+/*GOOGLE FONTS end*/
+
+/*palette and font
+
+splashScreen gradient
+"white" #d1d8e0
+blue #45aaf2
+
+logo gradient
+left #237f80
+right #2fa46a
+
+fonts
+font-family: 'Merriweather Sans', sans-serif;
+
+palette and font end*/
+
+
+
 /*layout*/
 html, body{
   height: 100%;
+
+}body{
+  background: #11998e;  /* fallback for old browsers */
+  background: -webkit-radial-gradient(#38ef7d, #11998e);  /* Chrome 10-25, Safari 5.1-6 */
+  background: radial-gradient(#38ef7d, #11998e); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  z-index: -2;
 }
 /*layout end*/
 
 /*splash screen*/
 #splashScreen{
   align-items: center;
-  background: #757F9A;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #D7DDE8, #757F9A);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #D7DDE8, #757F9A); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  background: #45aaf2;  /* fallback for old browsers */
+  background: -webkit-radial-gradient(#d1d8e0, #45aaf2);  /* Chrome 10-25, Safari 5.1-6 */
+  background: radial-gradient(#d1d8e0, #45aaf2); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
   display: flex;
   justify-content: center;
@@ -28,11 +56,46 @@ html, body{
   height: 33.333333333333%;
   width: 33.333333333333%;
 }
+#splashScreen blockquote {
+  color: #fff;
+  font-family: 'Merriweather Sans', sans-serif;
+  margin: 0;
+}
+#splashScreen blockquote #quote {
+  margin: 0;
+  font-size: 48px;
+  text-shadow: 1px 1px black;
+}
+#splashScreen blockquote #author{
+  
+}
+#quote:before, #quote :after{
+  display: inline-block;
+}
+  #quote:before {
+  content: '“';
+  margin: 0 5px 0 0;
+}
+
+  #quote:after {
+  content: '”';
+  margin: 0 0 0 5px;
+}
+#author{
+  float: right;
+  font-size: 24px;
+}
+#author:before{
+  content: "—";
+  display: inline-block;
+  margin: 0 5px 0 0;
+}
 /*splash screen end*/
 
 /*landing page*/
 
 video{
+
   position: fixed;
   top: 0;
   left: 0;
@@ -43,14 +106,68 @@ video{
   width: 100%;
   z-index: -1;
 }
-main{
-height: 540px;
-width: 540px;
-}
 main p{
-  color: #fff;
+  color: #d1d8e0;
+  font-family: 'Merriweather Sans', sans-serif;
+  font-size: 24px;
+  text-align: center;
+  text-shadow: 1px 1px black;
+
+}
+main img{
+  margin: 0 auto 40px;
+
+}
+main span{
+  font-weight: bold;
+  color: #237f80;
+  text-shadow: none;
+  font-size: 30px;
+}
+main a{
+  border: 1px solid #2fa46a !important;
+  background: #fff !important;
+  color: #2fa46a !important;
 }
 /*landing page end */
+
+/*navigation*/
+.navbar-brand img {
+  width: auto;
+  height: 30px;
+}
+/*navigation end*/
+
+/*task page*/
+#tasks {
+  background: #fff;
+  margin: 40px auto 0;
+  padding: 40px;
+  font-size: 16px;
+  font-family: 'Merriweather Sans', sans-serif;
+}
+#tasks h2{
+  text-align: center;
+  font-size: 54px;
+  border-bottom: 1px solid black;
+}
+.go-right{
+  float: right;
+  padding: 0 5px 0 0;
+}
+#tasks form{
+  text-align: center;
+}
+#tasks input{
+
+  border: 2px solid black;
+  border-radius: 5px;
+}
+#buttonf{
+  font-family: 'Merriweather Sans', sans-serif;
+    background: #45aaf2;
+}
+/*task page end*/
 
 /*animations*/
 @keyframes splashScreenAnimation{

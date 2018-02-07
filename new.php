@@ -1,49 +1,29 @@
 <?php
-
-$title = "Welcome";
-include "includes/header.php";
 session_start();
 
+include "includes/header.php";
+
+
 if (isset($_POST['addTask'])) {
-  addTask();
-}
-
-
+    addTask();
+  }
 ?>
 
 <?php if(isset($_SESSION['username'])) : ?>
-<nav>
-  <a href="logout.php">log out <?php echo $_SESSION['username']; ?></a>
-  <h1>App</h1>
-</nav>
 
-<section>
-  <h2>To do:</h2>
-  <ul>
-    <?php
-    $query = "SELECT * FROM tasks WHERE userid = {$_SESSION['id']}";
-    $result = mysqli_query($connection, $query);
+<?php include "includes/navigation.php"; ?>
 
-
-
-    while ($row = mysqli_fetch_array($result)) :
-?>
-<li>
-      <?php  echo  $row['task'] ;?>
-    <a href="includes/delete.php?taskID=<?php echo $row['id'];?>">X</a>
-    <a href="includes/edit.php?taskID=<?php echo $row['id'];?>&taskName=<?php echo $row['task'];?>">Edit</a>
-</li>
-
-    <?php endwhile; ?>
-  </ul>
-
-<form class="" action="new.php" method="post">
-  <input type="text" name="taskName" value="">
-  <input type="submit" name="addTask" value="Add task">
-</form>
-</section>
+<div class="container-fluid">
+  <div class="row justify-content-center">
+    <?php include "includes/tasks.php"; ?>
+  </div>
+</div>
 
 <?php else : ?>
-<h1>GTFO</h1>
+<div class="alert alert-danger">
+  You do not have access to this site!
+</div>
 <a href="login.php">Login now</a>
 <?php endif; ?>
+
+<?php include "includes/footer.php"; ?>

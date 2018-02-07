@@ -32,4 +32,17 @@ $appName = "todo:";
       echo "Wtf?";
     }
   }
+
+function ifSChange() {
+  global $title;
+  if (substr($_SESSION['username'], -1) === "s") {
+  return  $title = $_SESSION['username'] . ' reminders';
+  }
+  else {
+  return  $title = $_SESSION['username'] . 's' . ' reminders';
+  }
+}
+
+
+
  ?>

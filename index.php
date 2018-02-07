@@ -1,9 +1,12 @@
 <?php
+$title = "Welcome";
 $bodyClass = 'd-flex justify-content-center align-items-center';
 include 'includes/header.php';
-$query ="SELECT * FROM users";
+$query ="SELECT id FROM users";
 $result = mysqli_query($connection, $query);
 $numRows = mysqli_num_rows($result);
+
+
 ?>
 
 <!-- background video -->
@@ -14,9 +17,9 @@ Your browser does not support the video tag.
 <!-- background video end -->
 
 <!-- main content -->
-<main class="animated shake">
+<main class="col-12 col-sm-8 col-lg-4 animated text-center">
   <img src="img/todo.svg" alt="todo:" class="img-fluid">
-  <p>With <?php echo $numRows; ?> registered users!</p>
+  <p>With <span><?php echo $numRows; ?></span> registered users!</p>
   <a href="login.php" class="btn btn-primary">Login</a>
   <a href="register.php" class="btn btn-primary">Register</a>
 </main>
