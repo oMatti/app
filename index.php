@@ -11,7 +11,7 @@ $numRows = mysqli_num_rows($result);
 
 <!-- background video -->
 <video loop muted autoplay>
-<source src="vid/landing-page.mp4" type="video/mp4">
+<source src="vid/appBack1.mp4" type="video/mp4">
 Your browser does not support the video tag.
 </video>
 <!-- background video end -->
