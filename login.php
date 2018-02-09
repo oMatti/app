@@ -1,6 +1,6 @@
 <?php
     $title = 'Login';
-    $bodyID = 'login';
+    $bodyClass = 'd-flex justify-content-center align-items-center';
     include "includes/header.php";
 session_start();
 
@@ -46,13 +46,17 @@ $errorMessage = '';
 
 
 
-    <form
-      class="login animated bounceInLeft" action="login.php" method="post">
+
+
+    <form class="col-12 col-sm-8 col-lg-4 animated bounceInLeft" action="login.php" method="post">
       <h3>Login now</h3>
-      <input type="text" name="username" placeholder="Username" required autofocus>
-      <input type="password" name="password" placeholder="Password" required>
-      <input type="submit" name="login" value="Login">
-      <a class="link" href="register.php">New user? Register here!</a>
+      <div class="form-group">
+        <input type="text" name="username" class="form-control" placeholder="Username" required autofocus>
+      </div>
+      <div class="form-group">
+        <input type="password" name="password" class="form-control" placeholder="Password" required>
+      </div>
+      <button type="submit" class="btn btn-primary" name="login" value="Login">Login</button>
     </form>
 
     <?php if ($errorMessage) {
@@ -63,5 +67,4 @@ $errorMessage = '';
       <?php echo $errorMessage; ?>
     </div>
   <?php endif; ?>
-  </body>
-</html>
+<?php include "includes/footer.php"; ?>

@@ -7,12 +7,12 @@ $( document ).ready(function() {
       author: "Hagrid"
     },
     {
-      quote: "quote2",
-      author: "author2"
+      quote: "Goals transform a random walk into a chase.",
+      author: "Mihaly Csikszentmihalyi"
     },
     {
-      quote: "quote3",
-      author: "author3"
+      quote: "We are so vain that we even care for the opinion of those we don't care for.",
+      author: "Marie Ebner von Eschenbach"
     }
   ];
   var randomQuote = quotes[Math.floor(Math.random() * quotes.length)];

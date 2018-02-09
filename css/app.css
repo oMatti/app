@@ -63,11 +63,11 @@ html, body{
 }
 #splashScreen blockquote #quote {
   margin: 0;
-  font-size: 48px;
+  font-size: 24px;
   text-shadow: 1px 1px black;
 }
 #splashScreen blockquote #author{
-  
+
 }
 #quote:before, #quote :after{
   display: inline-block;
@@ -83,7 +83,7 @@ html, body{
 }
 #author{
   float: right;
-  font-size: 24px;
+  font-size: 14px;
 }
 #author:before{
   content: "—";
