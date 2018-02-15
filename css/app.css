@@ -5,7 +5,7 @@
 /*palette and font
 
 splashScreen gradient
-"white" #d1d8e0
+white #e0e0e0
 blue #45aaf2
 
 logo gradient
@@ -36,8 +36,8 @@ html, body{
   align-items: center;
 
   background: #45aaf2;  /* fallback for old browsers */
-  background: -webkit-radial-gradient(#d1d8e0, #45aaf2);  /* Chrome 10-25, Safari 5.1-6 */
-  background: radial-gradient(#d1d8e0, #45aaf2); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: -webkit-radial-gradient(#e0e0e0, #45aaf2);  /* Chrome 10-25, Safari 5.1-6 */
+  background: radial-gradient(#e0e0e0, #45aaf2); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
   display: flex;
   justify-content: center;
@@ -107,10 +107,9 @@ video{
   z-index: -1;
 }
 main p{
-  color: #d1d8e0;
+  color: #e0e0e0;
   font-family: 'Merriweather Sans', sans-serif;
   font-size: 24px;
-  text-align: center;
   text-shadow: 1px 1px black;
 
 }
@@ -120,27 +119,110 @@ main img{
 }
 main span{
   font-weight: bold;
-  color: #237f80;
+  color: #BA550D;
   text-shadow: none;
   font-size: 30px;
 }
 main a{
   border: 1px solid #2fa46a !important;
-  background: #fff !important;
+  background: #e0e0e0 !important;
   color: #2fa46a !important;
+  width: 100px !important;
 }
 /*landing page end */
+
+/*login and register*/
+form.forms{
+  color: #237F80;
+
+}
+button {
+  border: 1px solid #2fa46a !important;
+  background: #e0e0e0 !important;
+  color: #2fa46a !important;
+  width: 100% !important;
+}
+input{
+    border: 1px solid #2fa46a !important;
+}
+.lgn-reg{
+height: 100px;
+width: 0 auto;
+}
+/*login and register end*/
 
 /*navigation*/
 .navbar-brand img {
   width: auto;
   height: 30px;
 }
+.navbar{
+
+}
 /*navigation end*/
+
+/*profile header*/
+#profileHeader{
+  background: #E44D26;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to top, #F16529, #E44D26);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to top, #F16529, #E44D26); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  height: 250px;
+
+  text-align: center;
+}
+#profileHeader figure{
+  margin: 0 auto;
+  width: 150px;
+  position: relative;
+}
+#profileHeader figure img,
+  #profileHeader figure svg {
+border-radius: 50%;
+height: 150px;
+border: 8px solid #44e480;
+margin: 0 auto 10px;
+font-size: 150px;
+overflow: hidden;
+}
+#profileHeader figure h1{
+color: #e0e0e0;
+font-family: 'Merriweather Sans', sans-serif;
+font-size: 24px;
+margin: 0;
+}
+#profileHeader figure:before{
+  background: #44e499;
+  -webkit-box-shadow: 5px 7px 30px 3px rgba(0,0,0,0.5);
+-moz-box-shadow: 5px 7px 30px 3px rgba(0,0,0,0.5);
+box-shadow: 5px 7px 30px 3px rgba(0,0,0,0.5);
+  border-radius: 50%;
+  content: '';
+  display: block;
+  height: 25px;
+  width: 25px;
+  position: absolute;
+  top: 20px;
+  left: 5px;
+}
+#profileHeader figure.away:before{
+background: #EA2027;
+}
+#profileHeader figure.offline:before{
+  background: #7f8fa6;
+}
+/*profile header end*/
+
+/*fix later plz remember*/
+
+.uglySolutionFixLater{
+  margin: 200px auto 0;
+
+}
+/*fix later plz remember end*/
 
 /*task page*/
 #tasks {
-  background: #fff;
+  background: #e0e0e0;
   margin: 40px auto 0;
   padding: 40px;
   font-size: 16px;
@@ -162,10 +244,11 @@ main a{
 
   border: 2px solid black;
   border-radius: 5px;
+  background: #e0e0e0;
 }
 #buttonf{
   font-family: 'Merriweather Sans', sans-serif;
-    background: #45aaf2;
+    background: #e0e0e0;
 }
 /*task page end*/
 

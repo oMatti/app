@@ -22,6 +22,7 @@ if (!isset($title)){
 <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
 <link rel="manifest" href="img/manifest.json">
 <link rel="mask-icon" href="img/safari-pinned-tab.svg" color="#5bbad5">
+<script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
 <meta name="theme-color" content="#ffffff">
 
 <title><?php echo $title . " " . "&raquo" . " " . $appName; ?></title>

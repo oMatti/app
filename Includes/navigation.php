@@ -14,8 +14,8 @@
           Account
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="settings.php">Settings </a>
           <a class="dropdown-item" href="logout.php">Logout <?php echo $_SESSION['username']; ?></a>
-          <a class="dropdown-item" href="register.php">Register new</a>
         </div>
       </li>
     </ul>

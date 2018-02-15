@@ -15,7 +15,8 @@ if (isset($_POST['addTask'])) {
 
 <div class="container-fluid">
   <div class="row justify-content-center">
-    <?php include "includes/tasks.php"; ?>
+    <?php include "includes/profile.php"; ?>
+    <?php //include "includes/tasks.php"; ?>
   </div>
 </div>
 

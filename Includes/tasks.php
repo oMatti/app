@@ -14,7 +14,7 @@
     <?php endwhile; ?>
   </ul>
 <form class="" action="new.php" method="post">
-  <input type="text" name="taskName" value="">
+  <input type="text" name="taskName" value="" autofocus required>
   <input id="buttonf" type="submit" name="addTask" value="Add task">
 </form>
 </section>

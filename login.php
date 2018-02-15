@@ -1,6 +1,6 @@
 <?php
     $title = 'Login';
-    $bodyClass = 'd-flex justify-content-center align-items-center';
+    $bodyClass = 'd-flex flex-column justify-content-center align-items-center';
     include "includes/header.php";
 session_start();
 
@@ -10,46 +10,16 @@ $errorMessage = '';
 
       if(isset($_POST['login'])){
 
-        $username = $_POST['username'];
-        $password = $_POST['password'];
-
-        $username = mysqli_real_escape_string($connection, $username);
-        $password = mysqli_real_escape_string($connection, $password);
-
-
-        $query = "SELECT * FROM Users WHERE username = '{$username}' ";
-        $select_user_query = mysqli_query($connection, $query);
-
-        if (!$select_user_query) {
-          die('Query failed') . mysqli_error($connection);
-        }
-        while ($row = mysqli_fetch_array($select_user_query)) {
-          $db_id = $row['id'];
-          $db_username = $row['username'];
-          $db_password = $row['password'];
-        }
-
-        $password = crypt($password, $db_password);
-
-        if ($username === $db_username && $password === $db_password) {
-          $_SESSION['id'] = $db_id;
-          $_SESSION['username'] = $db_username;
-          header("Location: new.php");
-        }
-        else {
-
-          $errorMessage = "Wrong username or password!";
-        }
-
+        loginUser();
+        $errorMessage = loginUser();
       }
  ?>
 
 
-
-
-
-    <form class="col-12 col-sm-8 col-lg-4 animated bounceInLeft" action="login.php" method="post">
+    <form class="col-12 col-sm-8 col-lg-4 animated bounceInLeft forms" action="login.php" method="post">
+      <img src="img/todo.svg" alt="" class="img-fluid lgn-reg">
       <h3>Login now</h3>
+      <?php  ?>
       <div class="form-group">
         <input type="text" name="username" class="form-control" placeholder="Username" required autofocus>
       </div>
@@ -57,13 +27,13 @@ $errorMessage = '';
         <input type="password" name="password" class="form-control" placeholder="Password" required>
       </div>
       <button type="submit" class="btn btn-primary" name="login" value="Login">Login</button>
+      <a href="register.php">New user? Register here!</a>
     </form>
 
-    <?php if ($errorMessage) {
-      echo "class='login animated shake'";  } ?>
+
 
 <?php if ($errorMessage) : ?>
-    <div id="alert" class="animated shake">
+    <div class="animated shake alert alert-danger">
       <?php echo $errorMessage; ?>
     </div>
   <?php endif; ?>
